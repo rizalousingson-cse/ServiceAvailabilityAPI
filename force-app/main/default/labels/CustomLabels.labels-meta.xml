@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>UPRN_REQUIRED</fullName>
+        <categories>ERROR</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>UPRN_REQUIRED</shortDescription>
+        <value>The UPRN parameter is required.</value>
+    </labels>
+    <labels>
+        <fullName>NOT_EXISTING_UPRN</fullName>
+        <categories>ERROR</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NOT_EXISTING_UPRN</shortDescription>
+        <value>No Account was found for the supplied UPRN.</value>
+    </labels>
+</CustomLabels>

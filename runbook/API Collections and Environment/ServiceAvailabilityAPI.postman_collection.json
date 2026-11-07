@@ -1,0 +1,680 @@
+{
+  "info": {
+    "_postman_id": "d5b51c5d-f3d4-45ec-835f-16d5eb133530",
+    "name": "ServiceAvailabilityAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60018934",
+    "_collection_link": "https://go.postman.co/collection/60018934-d5b51c5d-f3d4-45ec-835f-16d5eb133530?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const jsonData = pm.response.json();\nconst id = jsonData.id.split('/');\n\nconst context = pm.environment.name ? pm.environment : pm.collectionVariables;\ncontext.set(\"accessToken\", jsonData.access_token);\ncontext.set(\"endpoint\", jsonData.instance_url);\ncontext.set(\"userId\", id.pop());\ncontext.set(\"orgId\", id.pop());\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "client_credentials"
+            },
+            {
+              "key": "client_id",
+              "value": "3MVG9JJwBBbcN47LcVOtbw0xAiMAgMF9sc6tL_jUocD96YRc.h6UzmwS4ey2KWN8I2VIl67Cc3w=="
+            },
+            {
+              "key": "client_secret",
+              "value": "AB307AEF3A4C491835383EECD2566F9CD76FCAFB91BCA2B958FD3938B779BDF8"
+            },
+            {
+              "key": "username",
+              "value": "demo@pozil.org",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": "PASSWORD_AND_SECURITY_TOKEN_GO_HERE",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://orgfarm-a7c0512838-dev-ed.develop.my.salesforce.com/services/oauth2/token",
+          "protocol": "https",
+          "host": [
+            "orgfarm-a7c0512838-dev-ed",
+            "develop",
+            "my",
+            "salesforce",
+            "com"
+          ],
+          "path": [
+            "services",
+            "oauth2",
+            "token"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Authentication",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                },
+                {
+                  "key": "client_id",
+                  "value": "3MVG9JJwBBbcN47LcVOtbw0xAiMAgMF9sc6tL_jUocD96YRc.h6UzmwS4ey2KWN8I2VIl67Cc3w=="
+                },
+                {
+                  "key": "client_secret",
+                  "value": "AB307AEF3A4C491835383EECD2566F9CD76FCAFB91BCA2B958FD3938B779BDF8"
+                },
+                {
+                  "key": "username",
+                  "value": "demo@pozil.org",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "PASSWORD_AND_SECURITY_TOKEN_GO_HERE",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://orgfarm-a7c0512838-dev-ed.develop.my.salesforce.com/services/oauth2/token",
+              "protocol": "https",
+              "host": [
+                "orgfarm-a7c0512838-dev-ed",
+                "develop",
+                "my",
+                "salesforce",
+                "com"
+              ],
+              "path": [
+                "services",
+                "oauth2",
+                "token"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 07 Nov 2026 11:34:16 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=63072000; includeSubDomains"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "Expires",
+              "value": "Thu, 01 Jan 1970 00:00:00 GMT"
+            },
+            {
+              "key": "Permissions-Policy",
+              "value": "unload=*"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache,must-revalidate,max-age=0,no-store,private"
+            },
+            {
+              "key": "x-sfdc-trace-flags",
+              "value": "01"
+            },
+            {
+              "key": "X-Robots-Tag",
+              "value": "none"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Server",
+              "value": "sfdcedge"
+            },
+            {
+              "key": "X-SFDC-Request-Id",
+              "value": "212ace2009dca1d73f6dcce1c10dd2c3"
+            },
+            {
+              "key": "X-Request-Id",
+              "value": "212ace2009dca1d73f6dcce1c10dd2c3"
+            },
+            {
+              "key": "X-SFDC-Edge-Cache",
+              "value": "none"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"access_token\": \"00Dak00001ONiur!AQEAQP83beY3Um7p3I0BRC7Ln1Om6_DUwsYzWGmRvnwnrTsZPJskfZaFZcE_lYGrp5vzh8a7vjJM7WO72hFsHXfE3YIpDKs0\",\n  \"signature\": \"pYfvgUYcuumvZVrKj+OL62pZT0w5446JYzlMzhUwbGE=\",\n  \"scope\": \"api\",\n  \"instance_url\": \"https://orgfarm-a7c0512838-dev-ed.develop.my.salesforce.com\",\n  \"id\": \"https://login.salesforce.com/id/00Dak00001ONiurEAD/005ak00000n4HCXAA2\",\n  \"token_type\": \"Bearer\",\n  \"issued_at\": \"1794051256127\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Apiv1",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{endpoint}}/services/apexrest/availability/v1?UPRN=523526262",
+          "host": [
+            "{{endpoint}}"
+          ],
+          "path": [
+            "services",
+            "apexrest",
+            "availability",
+            "v1"
+          ],
+          "query": [
+            {
+              "key": "UPRN",
+              "value": "523526262"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Apiv1_success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/services/apexrest/availability/v1?UPRN=523526262",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "services",
+                "apexrest",
+                "availability",
+                "v1"
+              ],
+              "query": [
+                {
+                  "key": "UPRN",
+                  "value": "523526262"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 07 Nov 2026 11:35:03 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "x-sfdc-trace-flags",
+              "value": "01"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "Permissions-Policy",
+              "value": "unload=*"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache,must-revalidate,max-age=0,no-store,private"
+            },
+            {
+              "key": "X-Robots-Tag",
+              "value": "none"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=63072000; includeSubDomains"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Server",
+              "value": "sfdcedge"
+            },
+            {
+              "key": "X-SFDC-Request-Id",
+              "value": "564d5f0c6f3c24b673dd9ac55ac9abb2"
+            },
+            {
+              "key": "X-Request-Id",
+              "value": "564d5f0c6f3c24b673dd9ac55ac9abb2"
+            },
+            {
+              "key": "X-SFDC-Edge-Cache",
+              "value": "none"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"ReadyForSale\": true,\n  \"UPRNExists\": true\n}"
+        },
+        {
+          "name": "Apiv1_error",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/services/apexrest/availability/v1?UPRN=523526263",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "services",
+                "apexrest",
+                "availability",
+                "v1"
+              ],
+              "query": [
+                {
+                  "key": "UPRN",
+                  "value": "523526263"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 07 Nov 2026 11:35:46 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache,must-revalidate,max-age=0,no-store,private"
+            },
+            {
+              "key": "x-sfdc-trace-flags",
+              "value": "01"
+            },
+            {
+              "key": "X-Robots-Tag",
+              "value": "none"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=63072000; includeSubDomains"
+            },
+            {
+              "key": "Permissions-Policy",
+              "value": "unload=*"
+            },
+            {
+              "key": "Server",
+              "value": "sfdcedge"
+            },
+            {
+              "key": "X-SFDC-Request-Id",
+              "value": "73c9ff659145f358e23eff8e11f1e96c"
+            },
+            {
+              "key": "X-Request-Id",
+              "value": "73c9ff659145f358e23eff8e11f1e96c"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"error\": \"No Account was found for the supplied UPRN.\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Apiv2",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{endpoint}}/services/apexrest/availability/v2?UPRN=523526262",
+          "host": [
+            "{{endpoint}}"
+          ],
+          "path": [
+            "services",
+            "apexrest",
+            "availability",
+            "v2"
+          ],
+          "query": [
+            {
+              "key": "UPRN",
+              "value": "523526262"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Apiv2_success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/services/apexrest/availability/v2?UPRN=523526262",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "services",
+                "apexrest",
+                "availability",
+                "v2"
+              ],
+              "query": [
+                {
+                  "key": "UPRN",
+                  "value": "523526262"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 07 Nov 2026 11:36:27 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "x-sfdc-trace-flags",
+              "value": "01"
+            },
+            {
+              "key": "X-Robots-Tag",
+              "value": "none"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache,must-revalidate,max-age=0,no-store,private"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "Permissions-Policy",
+              "value": "unload=*"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=63072000; includeSubDomains"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Server",
+              "value": "sfdcedge"
+            },
+            {
+              "key": "X-SFDC-Request-Id",
+              "value": "d46f74669061d33a95d25c23cf8c4099"
+            },
+            {
+              "key": "X-Request-Id",
+              "value": "d46f74669061d33a95d25c23cf8c4099"
+            },
+            {
+              "key": "X-SFDC-Edge-Cache",
+              "value": "none"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"AvailableForPreOrder\": true,\n  \"ClientJourney\": 1,\n  \"ReadyForSale\": true,\n  \"UPRNExists\": true\n}"
+        },
+        {
+          "name": "Apiv2_error",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{endpoint}}/services/apexrest/availability/v2?UPRN=523526264",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "services",
+                "apexrest",
+                "availability",
+                "v2"
+              ],
+              "query": [
+                {
+                  "key": "UPRN",
+                  "value": "523526264"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 07 Nov 2026 11:36:53 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "X-Robots-Tag",
+              "value": "none"
+            },
+            {
+              "key": "x-sfdc-trace-flags",
+              "value": "01"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache,must-revalidate,max-age=0,no-store,private"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=63072000; includeSubDomains"
+            },
+            {
+              "key": "Permissions-Policy",
+              "value": "unload=*"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Server",
+              "value": "sfdcedge"
+            },
+            {
+              "key": "X-SFDC-Request-Id",
+              "value": "5eb84b870d0d73ed0a60cdd334aa52ea"
+            },
+            {
+              "key": "X-Request-Id",
+              "value": "5eb84b870d0d73ed0a60cdd334aa52ea"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"error\": \"No Account was found for the supplied UPRN.\"\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "accessToken",
+      "value": ""
+    },
+    {
+      "key": "endpoint",
+      "value": ""
+    },
+    {
+      "key": "userId",
+      "value": ""
+    },
+    {
+      "key": "orgId",
+      "value": ""
+    }
+  ]
+}

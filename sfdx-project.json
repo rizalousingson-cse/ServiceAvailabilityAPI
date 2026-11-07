@@ -7,6 +7,6 @@
   ],
   "name": "ServiceAvailabilityAPI",
   "namespace": "",
-  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sfdcLoginUrl": "https://orgfarm-a7c0512838-dev-ed.develop.my.salesforce.com",
   "sourceApiVersion": "68.0"
 }

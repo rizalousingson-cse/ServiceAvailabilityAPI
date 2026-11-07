@@ -1,36 +1,51 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>AccountSelector</members>
+        <members>IntegrationErrorLogger</members>
+        <members>IntegrationErrorLoggerTest</members>
+        <members>ServiceAvailabilityApi</members>
+        <members>ServiceAvailabilityApiService</members>
+        <members>ServiceAvailabilityApiTest</members>
+        <members>ServiceAvailabilityApiV1</members>
+        <members>ServiceAvailabilityApiV2</members>
+        <members>ServiceAvailabilityRequestDTO</members>
+        <members>ServiceAvailabilityResponseDTO</members>
+        <members>TestDataFactory</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexComponent</name>
+        <members>Account.AvailableForPreOrder__c</members>
+        <members>Account.ClientJourney__c</members>
+        <members>Account.ReadyForSale__c</members>
+        <members>Account.UPRNExists__c</members>
+        <members>Account.Unique_Property_Reference_Number__c</members>
+        <members>Integration_Log_Error__c.Message__c</members>
+        <members>Integration_Log_Error__c.Request__c</members>
+        <members>Integration_Log_Error__c.Response__c</members>
+        <name>CustomField</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexPage</name>
+        <members>NOT_EXISTING_UPRN</members>
+        <members>UPRN_REQUIRED</members>
+        <name>CustomLabel</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexTestSuite</name>
+        <members>CustomLabels</members>
+        <name>CustomLabels</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
+        <members>Integration_Log_Error__c</members>
+        <name>CustomObject</name>
     </types>
     <types>
-        <members>*</members>
-        <name>AuraDefinitionBundle</name>
+        <members>Account-Account Layout</members>
+        <name>Layout</name>
     </types>
     <types>
-        <members>*</members>
-        <name>LightningComponentBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>StaticResource</name>
+        <members>API Profile</members>
+        <members>Admin</members>
+        <name>Profile</name>
     </types>
     <version>68.0</version>
 </Package>
